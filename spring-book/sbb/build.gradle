@@ -8,7 +8,7 @@ group = 'mysite'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '21'
+	sourceCompatibility = '17'
 }
 
 repositories {
@@ -18,10 +18,16 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	developmentOnly 'org.springframework.boot:spring-boot-devtolls'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-	runtimeOnly 'com.h2database:h2'
+//	runtimeOnly 'com.h2database:h2'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	testImplementation 'org.junit.jupiter:junit-jupiter'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
 }
 
 tasks.named('test') {
