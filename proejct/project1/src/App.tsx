@@ -1,6 +1,5 @@
-import Content from "./components/layout/Content";
 import Layout from "./components/layout/Layout";
-
+import Content from "./components/layout/Content";
 
 const App = () => {
   return (

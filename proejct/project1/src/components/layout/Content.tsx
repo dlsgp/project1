@@ -18,6 +18,7 @@ import review from "../../components/img/review.jpg";
 import AddPhotoAlternateOutlinedIcon from "@mui/icons-material/AddPhotoAlternateOutlined";
 import CallIcon from "@mui/icons-material/Call";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.min.css";
 
 const StyledBox = styled(Box)({
   width: "100%",
@@ -86,6 +87,18 @@ const IBox = styled(Box)({
   marginTop: "244px",
   backgroundColor: "#1565c0",
   display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+});
+
+const InBox = styled(Box)({
+  width: "220px",
+  height: "220px",
+  marginRight: "64px",
+  backgroundColor: "yellow",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 });
 
 const RBox = styled(Box)({
@@ -431,7 +444,34 @@ const Content = () => {
         </Grid>
       </Grid>
       {/* 인스타그램 */}
-      <IBox></IBox>
+      <IBox>
+        <Swiper
+          spaceBetween={64}
+          slidesPerView={5}
+          loop={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+        >
+          <SwiperSlide>
+            <InBox>Slide 1</InBox>
+          </SwiperSlide>
+          <SwiperSlide>
+            <InBox>Slide 2</InBox>
+          </SwiperSlide>
+          <SwiperSlide>
+            <InBox>Slide 3</InBox>
+          </SwiperSlide>
+          <SwiperSlide>
+            <InBox>Slide 4</InBox>
+          </SwiperSlide>
+          <SwiperSlide>
+            <InBox>Slide 5</InBox>
+          </SwiperSlide>
+        </Swiper>
+      </IBox>
+
       {/* 이용후기 */}
       <Grid container spacing={2}>
         <Grid item xs={8}>
