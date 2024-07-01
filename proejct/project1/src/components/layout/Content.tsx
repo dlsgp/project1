@@ -1,8 +1,6 @@
-import * as React from "react";
 import {
   Grid,
   Box,
-  styled,
   TextField,
   Typography,
   MenuItem,
@@ -10,7 +8,6 @@ import {
   FormGroup,
   FormControlLabel,
   Checkbox,
-  Icon,
 } from "@mui/material";
 import svgGroup from "../../components/img/Mask group.svg";
 import map from "../../components/img/map.jpg";
@@ -18,7 +15,12 @@ import review from "../../components/img/review.jpg";
 import AddPhotoAlternateOutlinedIcon from "@mui/icons-material/AddPhotoAlternateOutlined";
 import CallIcon from "@mui/icons-material/Call";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.min.css";
+import "../layout/Content.css";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "./styles.css";
+import { Autoplay } from "swiper/modules";
 
 const StyledBox = styled(Box)({
   width: "100%",
@@ -78,17 +80,6 @@ const SsBox = styled(Box)({
   color: "#FFFFFF",
   fontSize: "32px",
   display: "flex",
-});
-
-const IBox = styled(Box)({
-  width: "1720px",
-  height: "582px",
-  marginLeft: "94px",
-  marginTop: "244px",
-  backgroundColor: "#1565c0",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
 });
 
 const InBox = styled(Box)({
@@ -207,190 +198,64 @@ const StyledSwiper = styled(Swiper)({
 
 const Content = () => {
   return (
-    <div>
-      <StyledBox sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2} justifyContent={"flex-end"}>
-          <Grid item xs={6}>
-            <StyledImage
-              sx={{ borderRadius: "10px" }}
-              src={svgGroup}
-              alt="사진"
-            />
-          </Grid>
-          <Grid item xs={6}>
-            <StyleBox>
-              <Typography
-                fontSize={"20px"}
-                marginLeft={"30px"}
-                marginTop={"38px"}
-                marginBottom={"14px"}
-              >
-                온라인상담
-              </Typography>
-              <Typography>
-                <hr />
-              </Typography>
-              <Grid container spacing={2}>
-                <Grid item xs={6}>
-                  <Box
-                    component="form"
-                    sx={{
-                      "& > :not(style)": {
-                        height: "52px",
-                        width: "212px",
-                        marginLeft: "52px",
-                        marginTop: "28px",
-                      },
-                    }}
-                    noValidate
-                    autoComplete="off"
-                  >
-                    <TextField
-                      id="outlined-basic"
-                      label="이름"
-                      variant="outlined"
-                    />
-                  </Box>
-                </Grid>
-                <Grid item xs={6}>
-                  <Box
-                    component="form"
-                    sx={{
-                      "& > :not(style)": {
-                        height: "52px",
-                        width: "212px",
-                        marginRight: "52px",
-                        marginTop: "28px",
-                      },
-                    }}
-                    noValidate
-                    autoComplete="off"
-                  >
-                    <TextField
-                      id="outlined-basic"
-                      label="전화번호"
-                      variant="outlined"
-                    />
-                  </Box>
-                </Grid>
-
-                <TextField
-                  sx={{
-                    width: "456px",
-                    height: "52px",
-                    marginLeft: "68px",
-                    marginTop: "30px",
-                  }}
-                  id="outlined-select-currency"
-                  select
-                  label="주소"
-                  defaultValue="중구"
-                  helperText="구를 선택해주세요"
-                >
-                  {currencies.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
-
-                <TextField
-                  sx={{
-                    width: "456px",
-                    height: "52px",
-                    marginLeft: "68px",
-                    marginTop: "50px",
-                  }}
-                  id="outlined-select-currency"
-                  select
-                  label="상담유형"
-                  defaultValue="원하는 상담 유형 선택"
-                  helperText="원하시는 상담 유형을 선택해주세요"
-                >
-                  {advice.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
-
-                <Box
-                  component="form"
-                  sx={{
-                    "& > :not(style)": {
-                      width: "456px",
-                      height: "102px",
-                      marginLeft: "68px",
-                      marginTop: "50px",
-                    },
-                  }}
-                  noValidate
-                  autoComplete="off"
-                >
-                  <TextField
-                    sx={{
-                      width: "456px",
-                      height: "auto",
-                      marginLeft: "68px",
-                      marginTop: "50px",
-                      textAlign: "center",
-                    }}
-                    id="outlined-basic"
-                    label="요청사항/문의사항"
-                    variant="outlined"
-                    multiline
-                    rows={4}
-                  />
-                </Box>
-              </Grid>
-              <StyledButton
-                component="label"
-                role={undefined}
-                variant="contained"
-                tabIndex={-1}
-                endIcon={<AddPhotoAlternateOutlinedIcon />}
-              >
+    <div className="content">
+      <div className="styledBox">
+        <div className="grid-container">
+          <div className="grid-item">
+            <img className="styledImage" src={svgGroup} alt="사진" />
+          </div>
+          <div className="grid-item">
+            <div className="styleBox">
+              <h2 className="title">온라인상담</h2>
+              <hr />
+              <div className="form-container">
+                <div className="form-item">
+                  <input className="form-input" type="text" placeholder="이름" />
+                </div>
+                <div className="form-item">
+                  <input className="form-input" type="tel" placeholder="전화번호" />
+                </div>
+                <div className="form-item">
+                  <select className="form-select" defaultValue="중구">
+                    {currencies.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="form-item">
+                  <select className="form-select" defaultValue="원하는 상담 유형 선택">
+                    {advice.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="form-item">
+                  <textarea className="form-textarea" placeholder="요청사항/문의사항"></textarea>
+                </div>
+              </div>
+              <button className="styledButton">
                 첨부파일
-                <VisuallyHiddenInput type="file" />
-              </StyledButton>
-              <FormGroup>
-                <FormControlLabel
-                  sx={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    textAlign: "center",
-                    marginTop: "38px",
-                    justifyContent: "center",
-                  }}
-                  control={<Checkbox />}
-                  label="개인정보수집 및 이용동의"
-                />
-              </FormGroup>
-
-              <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                height="100%"
-              >
-                <Button
-                  sx={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    textAlign: "center",
-                    justifyContent: "center",
-                    width: "180px",
-                    height: "50px",
-                  }}
-                  variant="contained"
-                >
+                <input className="visually-hidden-input" type="file" />
+              </button>
+              <div className="checkbox-container">
+                <label className="checkbox-label">
+                  <input className="checkbox" type="checkbox" />
+                  개인정보수집 및 이용동의
+                </label>
+              </div>
+              <div className="submit-container">
+                <button className="submit-button" variant="contained">
                   신청하기
-                </Button>
-              </Box>
-            </StyleBox>
-          </Grid>
-        </Grid>
-      </StyledBox>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* 박스 */}
       <Grid container spacing={2}>
         <Grid item xs={6}>
@@ -444,8 +309,9 @@ const Content = () => {
         </Grid>
       </Grid>
       {/* 인스타그램 */}
-      <IBox>
+      <div className="Insta">
         <Swiper
+          modules={[Autoplay]}
           spaceBetween={64}
           slidesPerView={5}
           loop={true}
@@ -469,8 +335,11 @@ const Content = () => {
           <SwiperSlide>
             <InBox>Slide 5</InBox>
           </SwiperSlide>
+          <SwiperSlide>
+            <InBox>Slide 6</InBox>
+          </SwiperSlide>
         </Swiper>
-      </IBox>
+      </div>
 
       {/* 이용후기 */}
       <Grid container spacing={2}>
