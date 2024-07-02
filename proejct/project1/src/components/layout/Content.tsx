@@ -65,90 +65,73 @@ const Content = () => {
   //   };
 
   return (
-    <div className="content">
+    <div>
       <Box className="styledBox">
         <Grid className="grid-container">
-          <Grid className="grid-item">
-            <img className="styledImage" src={svgGroup} alt="사진" />
-          </Grid>
-          <Grid className="grid-item">
-            <Box className="styleBox">
-              <Typography
-                fontSize={"20px"}
-                marginLeft={"30px"}
-                marginTop={"38px"}
-                marginBottom={"14px"}
+          <img className="bannerImage" src={svgGroup} alt="사진" />
+        </Grid>
+        <Grid className="grid-container">
+          <Box className="formBox">
+            <Typography
+              fontSize={"20px"}
+              marginLeft={"30px"}
+              marginTop={"38px"}
+              marginBottom={"14px"}
+            >
+              온라인상담
+            </Typography>
+
+            <Typography>
+              <hr />
+            </Typography>
+
+            <Grid className="grid-container">
+              <Box
+                className="text-box"
+                sx={{
+                  marginLeft: "52px",
+                }}
               >
-                온라인상담
-              </Typography>
-              <Typography>
-                <hr />
-              </Typography>
-              <Grid className="grid-container">
-                <Grid className="grid-item">
-                  <Box
-                    component="form"
-                    sx={{
-                      "& > :not(style)": {
-                        height: "52px",
-                        width: "212px",
-                        marginLeft: "52px",
-                        marginTop: "28px",
-                      },
-                    }}
-                    noValidate
-                    autoComplete="off"
-                  >
-                    <TextField
-                      id="outlined-basic"
-                      label="이름"
-                      variant="outlined"
-                    />
-                  </Box>
-                </Grid>
-                <Grid className="grid-item">
-                  <Box
-                    component="form"
-                    sx={{
-                      "& > :not(style)": {
-                        height: "52px",
-                        width: "212px",
-                        marginRight: "52px",
-                        marginTop: "28px",
-                      },
-                    }}
-                    noValidate
-                    autoComplete="off"
-                  >
-                    <TextField
-                      id="outlined-basic"
-                      label="전화번호"
-                      variant="outlined"
-                    />
-                  </Box>
-                </Grid>
-
                 <TextField
-                  sx={{
-                    width: "456px",
-                    height: "52px",
-                    marginLeft: "68px",
-                    marginTop: "30px",
-                  }}
-                  id="outlined-select-currency"
-                  select
-                  label="주소"
-                  defaultValue="중구"
-                  helperText="구를 선택해주세요"
-                >
-                  {currencies.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
+                  id="outlined-basic"
+                  label="이름"
+                  variant="outlined"
+                />
+              </Box>
 
-                {/* <TextField className="form-item">
+              <Box
+                className="text-box"
+                sx={{
+                  marginRight: "52px",
+                }}
+              >
+                <TextField
+                  id="outlined-basic"
+                  label="전화번호"
+                  variant="outlined"
+                />
+              </Box>
+            </Grid>
+
+            <TextField
+              className="text-field"
+              sx={{
+                height: "52px",
+              }}
+              id="outlined-select-currency"
+              select
+              label="주소"
+              defaultValue="구 선택"
+              helperText="구를 선택해주세요"
+            >
+              {currencies.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+
+            {/* <TextField className="form-item">
                   <select
                     className="form-select"
                     value={selectedOption}
@@ -162,79 +145,61 @@ const Content = () => {
                   </select>
                 </TextField> */}
 
-                <Box
-                  component="form"
-                  sx={{
-                    "& > :not(style)": {
-                      width: "456px",
-                      height: "102px",
-                      marginLeft: "68px",
-                      marginTop: "50px",
-                    },
-                  }}
-                  noValidate
-                  autoComplete="off"
-                >
-                  <TextField
-                    sx={{
-                      width: "456px",
-                      height: "auto",
-                      marginLeft: "68px",
-                      marginTop: "50px",
-                      textAlign: "center",
-                    }}
-                    id="outlined-basic"
-                    label="요청사항/문의사항"
-                    variant="outlined"
-                    multiline
-                    rows={4}
-                  />
-                </Box>
-              </Grid>
-              <Button
-                className="styledButton"
-                variant="contained"
-                endIcon={<AddPhotoAlternateOutlinedIcon />}
-              >
-                첨부파일
-                <input className="visually-hidden-input" type="file" />
-              </Button>
-              <FormGroup>
-                <FormControlLabel
-                  sx={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    textAlign: "center",
-                    marginTop: "38px",
-                    justifyContent: "center",
-                  }}
-                  control={<Checkbox />}
-                  label="개인정보수집 및 이용동의"
-                />
-              </FormGroup>
+            <TextField
+              className="text-field"
+              sx={{
+                height: "240px",
+              }}
+              id="outlined-basic"
+              label="요청사항/문의사항"
+              variant="outlined"
+              multiline
+              rows={5}
+            />
 
-              <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                height="100%"
+            <Button
+              className="file-button"
+              variant="contained"
+              endIcon={<AddPhotoAlternateOutlinedIcon />}
+            >
+              첨부파일
+            </Button>
+
+            <FormGroup>
+              <FormControlLabel
+                sx={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  textAlign: "center",
+                  marginTop: "38px",
+                  justifyContent: "center",
+                }}
+                control={<Checkbox />}
+                label="개인정보수집 및 이용동의"
+              />
+            </FormGroup>
+
+            <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              height="100%"
+            >
+              <Button
+                sx={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  textAlign: "center",
+                  justifyContent: "center",
+                  width: "180px",
+                  height: "50px",
+                }}
+                variant="contained"
               >
-                <Button
-                  sx={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    textAlign: "center",
-                    justifyContent: "center",
-                    width: "180px",
-                    height: "50px",
-                  }}
-                  variant="contained"
-                >
-                  신청하기
-                </Button>
-              </Box>
+                신청하기
+              </Button>
             </Box>
-          </Grid>
+          </Box>
         </Grid>
       </Box>
 
