@@ -15,12 +15,13 @@ import review from "../../components/img/review.jpg";
 import AddPhotoAlternateOutlinedIcon from "@mui/icons-material/AddPhotoAlternateOutlined";
 import CallIcon from "@mui/icons-material/Call";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "../layout/Content.css";
+import "../layout/Content.scss";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./styles.css";
 import { Autoplay } from "swiper/modules";
+import { Check, CheckBox } from "@mui/icons-material";
 
 const currencies = [
   {
@@ -60,12 +61,12 @@ const currencies = [
 const Content = () => {
   return (
     <div className="content">
-      <div className="styledBox">
-        <div className="grid-container">
-          <div className="grid-item">
+      <Box className="styledBox">
+        <Grid className="grid-container">
+          <Grid className="grid-item">
             <img className="styledImage" src={svgGroup} alt="사진" />
-          </div>
-          <div className="grid-item">
+          </Grid>
+          <Grid className="grid-item">
             <div className="styleBox">
               <div className="title">온라인상담</div>
               <hr />
@@ -100,54 +101,54 @@ const Content = () => {
                   ></textarea>
                 </div>
               </div>
-              <button className="styledButton">
+              <Button className="styledButton">
                 첨부파일
                 <input className="visually-hidden-input" type="file" />
-              </button>
-              <div className="checkbox">
+              </Button>
+              <CheckBox className="checkbox">
                 <label className="checkbox-label">
-                  <input className="checkbox" type="checkbox" />
+                  <Checkbox className="checkbox" />
                   개인정보수집 및 이용동의
                 </label>
-              </div>
+              </CheckBox>
               <div className="submit">
-                <button className="submit-button">신청하기</button>
+                <Button className="submit-button">신청하기</Button>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </Grid>
+        </Grid>
+      </Box>
       {/* 박스 */}
-      <div className="grid-container">
-        <div className="grid-item">
-          <div className="SBox">
+      <Grid className="grid-container">
+        <Grid className="grid-item">
+          <Box className="SBox">
             <CallIcon fontSize="large" />
             053-123-1234
-          </div>
-        </div>
-        <div className="grid-item">
-          <div className="SBox">
+          </Box>
+        </Grid>
+        <Grid className="grid-item">
+          <Box className="SBox">
             <div className="SlideSwiper">
               <SwiperSlide>Slide 1</SwiperSlide>
               <SwiperSlide>Slide 2</SwiperSlide>
               <SwiperSlide>Slide 3</SwiperSlide>
               <SwiperSlide>Slide 4</SwiperSlide>
             </div>
-          </div>
-        </div>
-      </div>
+          </Box>
+        </Grid>
+      </Grid>
 
       {/* 지도, 공지사항 */}
-      <div className="grid-container">
-        <div className="grid-item">
-          <div className="SsBox">
+      <Grid className="grid-container">
+        <Grid className="grid-item">
+          <Box className="SsBox">
             <img className="styleImage" src={map} alt="지도사진" />
-          </div>
-        </div>
-        <div className="grid-item">
-          <div className="SsBox"></div>
-        </div>
-      </div>
+          </Box>
+        </Grid>
+        <Grid className="grid-item">
+          <Box className="SsBox"></Box>
+        </Grid>
+      </Grid>
 
       {/* 인스타그램 */}
       <div className="Insta">
@@ -187,16 +188,16 @@ const Content = () => {
 
       {/* 이용후기 */}
       {/* <Grid item xs={8}> */}
-      <div className="grid-container">
-        <div className="grid-items">
-          <div className="RBox">
+      <Grid className="grid-container">
+        <Grid className="grid-items">
+          <Box className="RBox">
             <img className="reviewImage" src={review} alt="이용후기" />
             <img className="reviewImage" src={review} alt="이용후기" />
             <img className="reviewImage" src={review} alt="이용후기" />
             <img className="reviewImage" src={review} alt="이용후기" />
-          </div>
-        </div>
-      </div>
+          </Box>
+        </Grid>
+      </Grid>
     </div>
   );
 };
