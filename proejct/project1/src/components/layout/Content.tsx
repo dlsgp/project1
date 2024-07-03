@@ -9,7 +9,9 @@ import {
   FormControlLabel,
   Checkbox,
 } from "@mui/material";
-import svgGroup from "../../components/img/Mask group.svg";
+import banner from "../../components/img/banner.jpg";
+import banner2 from "../../components/img/banner2.jpg";
+import banner3 from "../../components/img/banner3.jpg";
 import map from "../../components/img/map.jpg";
 import review from "../../components/img/review.jpg";
 import AddPhotoAlternateOutlinedIcon from "@mui/icons-material/AddPhotoAlternateOutlined";
@@ -58,17 +60,43 @@ const currencies = [
 ];
 
 const Content = () => {
-  //   const [selectedOption, setSelectedOption] = useState("구 선택");
-
-  //   const handleOptionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-  //     setSelectedOption(event.target.value);
-  //   };
-
   return (
     <div>
       <Box className="styledBox">
         <Grid className="grid-container">
-          <img className="bannerImage" src={svgGroup} alt="사진" />
+          <Grid className="grid-item">
+            <div>
+              <Swiper
+                className="swiper"
+                modules={[Autoplay]}
+                slidesPerView={1}
+                loop={true}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
+              >
+                <SwiperSlide>
+                  <img className="bannerImage" src={banner} alt="사진" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img className="bannerImage" src={banner2} alt="사진" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img className="bannerImage" src={banner3} alt="사진" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img className="bannerImage" src={banner} alt="사진" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img className="bannerImage" src={banner2} alt="사진" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img className="bannerImage" src={banner3} alt="사진" />
+                </SwiperSlide>
+              </Swiper>
+            </div>
+          </Grid>
         </Grid>
         <Grid className="grid-container">
           <Box className="formBox">
@@ -131,20 +159,6 @@ const Content = () => {
               ))}
             </TextField>
 
-            {/* <TextField className="form-item">
-                  <select
-                    className="form-select"
-                    value={selectedOption}
-                    onChange={handleOptionChange}
-                  >
-                    {currencies.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                </TextField> */}
-
             <TextField
               className="text-field"
               sx={{
@@ -162,7 +176,7 @@ const Content = () => {
               variant="contained"
               endIcon={<AddPhotoAlternateOutlinedIcon />}
             >
-              첨부파일
+              {/* <input className="buttonName" type="file" /> */}
             </Button>
 
             <FormGroup>
@@ -204,25 +218,18 @@ const Content = () => {
       </Box>
 
       {/* 박스 */}
-      <Grid className="grid-container">
-        <Grid className="grid-item">
-          <Box className="SBox">
-            <CallIcon fontSize="large" />
-            053-123-1234
-          </Box>
-        </Grid>
-        <Grid className="grid-item">
-          <Box
-            sx={{
-              padding: 0,
-              marginLeft: 0,
-              marginRight: "94px",
-              marginTop: "138px",
-              backgroundColor: "#ffffff",
-            }}
-          >
+      <Grid className="grid-contnainer">
+        <div>
+          <Grid className="grid-item">
+            <div>
+              <Box className="LBox">
+                <CallIcon fontSize="large" />
+                053-123-1234
+              </Box>
+            </div>
+          </Grid>
+          <Box className="RBox">
             <Swiper
-              className="SlideSwiper"
               direction="vertical"
               autoplay={{
                 delay: 2000,
@@ -235,8 +242,9 @@ const Content = () => {
               <SwiperSlide>Slide 4</SwiperSlide>
             </Swiper>
           </Box>
-        </Grid>
+        </div>
       </Grid>
+
       {/* 지도, 공지사항 */}
       <Grid className="grid-container">
         <Grid className="grid-item">
