@@ -1,0 +1,18 @@
+#formBox {
+  height: 800px;
+  background-color: #00ff4c;
+  border: 1px solid #e5e5e5;
+  border-radius: 40px 0 0 40px;
+  margin-left: auto;
+}
+
+#text-field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.boxContainer {
+  width: 468px;
+  height: 446px;
+  background-color: aqua;
+}

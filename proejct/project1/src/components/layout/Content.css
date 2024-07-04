@@ -1,0 +1,21 @@
+.mainContainer {
+  max-width: 100%;
+}
+
+.gridContainer {
+  max-width: 1720px;
+}
+
+.gridSwiper {
+  flex-flow: row;
+}
+
+.swiper {
+  max-width: 860px;
+  max-height: 800px;
+}
+
+.bannerImage {
+  border-radius: 10px;
+}
+
