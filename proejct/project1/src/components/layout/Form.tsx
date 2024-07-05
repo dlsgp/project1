@@ -166,21 +166,25 @@ const Form = () => {
     <Container id="formBox">
       <p>온라인 상담</p>
       <div>
-        <Grid container spacing={1}>
-          <Grid item xs={6}>
+        <Grid container rowSpacing={5}>
+          <Grid
+            item
+            xs={12}
+            sx={{ display: "flex", justifyContent: "space-between" }}
+          >
             <TextField
               id="outlined-basic"
               size="small"
               label="이름"
               variant="outlined"
+              sx={{ width: "48%" }}
             />
-          </Grid>
-          <Grid item xs={6}>
             <TextField
               id="outlined-basic"
               size="small"
               label="전화번호"
               variant="outlined"
+              sx={{ width: "48%" }}
             />
           </Grid>
           <Grid item xs={12}>
@@ -223,20 +227,25 @@ const Form = () => {
               {/* <input className="buttonName" type="file" /> */}
             </Button>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} sx={{ display: "flex", justifyContent: "center" }}>
             <FormGroup>
               <FormControlLabel
-                sx={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  textAlign: "center",
-                  marginTop: "38px",
-                  justifyContent: "center",
-                }}
+                sx={{}}
                 control={<Checkbox />}
                 label="개인정보수집 및 이용동의"
               />
             </FormGroup>
+          </Grid>
+          <Grid item xs={12} sx={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              sx={{
+                width: "180px",
+                height: "50px",
+              }}
+              variant="contained"
+            >
+              신청하기
+            </Button>
           </Grid>
         </Grid>
       </div>

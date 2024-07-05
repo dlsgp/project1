@@ -10,7 +10,7 @@
   flex-flow: row;
 }
 
-.swiper {
+.bannerSwiper {
   max-width: 860px;
   max-height: 800px;
 }
@@ -19,3 +19,41 @@
   border-radius: 10px;
 }
 
+#box-container {
+  max-width: 100%;
+}
+
+#left-box {
+  height: 240px;
+  border-radius: 10px;
+  background-color: #1565c0;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+#right-box {
+  height: 240px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+#font-call {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.swiper-messageId {
+  font-size: 20px;
+  color: black;
+  margin-right: 84px;
+}
+
+#map-container {
+  max-width: 100%;
+}

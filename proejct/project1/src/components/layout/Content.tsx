@@ -1,4 +1,4 @@
-import { Grid, Box, Container } from "@mui/material";
+import { Grid, Box, Container, Stack } from "@mui/material";
 import banner from "../../components/img/banner.jpg";
 import banner2 from "../../components/img/banner2.jpg";
 import banner3 from "../../components/img/banner3.jpg";
@@ -11,16 +11,32 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./styles.css";
-import { Autoplay } from "swiper/modules";
+import SwiperReview from "./SwiperReview";
+import { Pagination, Autoplay } from "swiper/modules";
 import Form from "./Form";
+import AllNotice from "./AllNotice";
 
 const Content = () => {
   return (
-    <Container className="mainContainer" maxWidth={"md"}>
+    <Container className="mainContainer" maxWidth={"xl"} sx={{ mt: "150px" }}>
+      <div
+        style={{
+          position: "fixed",
+          top: "30%",
+          right: "20px",
+          width: "96px",
+          height: "372px",
+          border: " solid 1px #000000",
+          zIndex: 100,
+          backgroundColor: "#FFFFFF",
+        }}
+      >
+        전화
+      </div>
       <Grid container spacing={4} className="gridContnainer">
         <Grid item xs={6} className="gridSwiper">
           <Swiper
-            className="swiper"
+            className="bannerSwiper"
             modules={[Autoplay]}
             slidesPerView={1}
             loop={true}
@@ -50,22 +66,171 @@ const Content = () => {
           </Swiper>
         </Grid>
 
-        <Grid item xs={6} className="gridForm">
-          <Form></Form>
+        <Grid item xs={6}>
+          <Form />
         </Grid>
       </Grid>
 
-      <Grid container spacing={4}>
-        <Grid item md={6}>
-          <Box className="">
-            <CallIcon fontSize="large" />
-            053-123-1234
+      <Grid container id="box-container" sx={{ py: "138px" }}>
+        <Grid item xs={6}>
+          <Box id="left-box">
+            <div id="font-call">
+              <CallIcon fontSize="large" sx={{ marginRight: "24px" }} />
+              053-123-1234
+            </div>
           </Box>
         </Grid>
-        <Grid item md={6}>
-          <Box></Box>
+        <Grid item xs={6}>
+          <Box id="right-box">
+            <Swiper
+              direction={"vertical"}
+              modules={[Pagination, Autoplay]}
+              slidesPerView={1}
+              loop={true}
+              autoplay={{
+                delay: 1500,
+                disableOnInteraction: false,
+              }}
+            >
+              <SwiperSlide>
+                <div>
+                  <span className="swiper-messageId">상담완료</span>
+                  <span className="swiper-messageId">김 * 민</span>
+                  <span className="swiper-messageId">010-****-1234</span>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div>
+                  <span className="swiper-messageId">상담중</span>
+                  <span className="swiper-messageId">최 * 인</span>
+                  <span className="swiper-messageId">010-****-5824</span>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div>
+                  <span className="swiper-messageId">상담완료</span>
+                  <span className="swiper-messageId">김 * 민</span>
+                  <span className="swiper-messageId">010-****-4872</span>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div>
+                  <span className="swiper-messageId">상담완료</span>
+                  <span className="swiper-messageId">박 * 수</span>
+                  <span className="swiper-messageId">010-****-0254</span>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div>
+                  <span className="swiper-messageId">상담중</span>
+                  <span className="swiper-messageId">이 * 민</span>
+                  <span className="swiper-messageId">010-****-5680</span>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div>
+                  <span className="swiper-messageId">상담완료</span>
+                  <span className="swiper-messageId">김 * 민</span>
+                  <span className="swiper-messageId">010-****-1234</span>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </Box>
         </Grid>
       </Grid>
+
+      <Grid container id="map-container" sx={{ py: "262px" }}>
+        <Grid item xs={6} id="grid-map">
+          <img
+            src={map}
+            alt="지도사진"
+            style={{ width: "100%", height: "100%" }}
+          />
+        </Grid>
+
+        <Grid item xs={6}>
+          <AllNotice />
+        </Grid>
+      </Grid>
+      <Grid container sx={{ width: "100%" }}>
+        <Grid item xs>
+          <SwiperReview />
+        </Grid>
+      </Grid>
+
+      <Container
+        maxWidth={"xl"}
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          p: "240px",
+        }}
+      >
+        <Box
+          sx={{
+            width: 270,
+            height: 270,
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src={review}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </Box>
+        <Box
+          sx={{
+            width: 270,
+            height: 270,
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src={review}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </Box>
+        <Box
+          sx={{
+            width: 270,
+            height: 270,
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src={review}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </Box>
+        <Box
+          sx={{
+            width: 270,
+            height: 270,
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src={review}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </Box>
+      </Container>
     </Container>
 
     // <div>
